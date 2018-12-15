@@ -1,18 +1,30 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import { createStore, applyMiddleware, compose } from 'redux';
+import createSagaMiddleware from 'redux-saga';
 import { Provider } from 'react-redux';
-import { createStore, applyMiddleware } from 'redux';
-import thunk from 'redux-thunk';
-import { createLogger } from 'redux-logger';
 import * as serviceWorker from './serviceWorker';
+
+import { watcherSaga } from './sagas';
 import App from './components/App';
 import rootReducer from './reducers';
 
-const middleware = [thunk];
-if (process.env.NODE_ENV !== 'production') {
-  middleware.push(createLogger());
-}
-const store = createStore(rootReducer, applyMiddleware(...middleware));
+// create the saga middleware
+const sagaMiddleware = createSagaMiddleware();
+
+// dev tools middleware
+// eslint-disable-next-line no-underscore-dangle
+const reduxDevTools = window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__();
+
+// create a redux store with our reducer above and middleware
+const store = createStore(
+  rootReducer,
+  compose(applyMiddleware(sagaMiddleware), reduxDevTools),
+);
+
+// run the saga
+sagaMiddleware.run(watcherSaga);
+
 ReactDOM.render(
   <Provider store={store}>
     <App />

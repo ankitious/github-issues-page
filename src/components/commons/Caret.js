@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled from 'styled-components';
 
 const Caret = styled.span`
     padding: 0px 5px;

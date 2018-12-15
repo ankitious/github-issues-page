@@ -1,0 +1,56 @@
+import React, { Component } from 'react';
+import { connect } from 'react-redux';
+import styled from 'styled-components';
+import { getGitIssues } from '../actions';
+import Issue from '../components/issues-table/Issue';
+
+
+const IssuesContainerWrapper = styled.div`
+   border :  1px solid #e1e4e8;
+   margin-top: 20px;
+   border-collapse : collapse;
+
+`;
+class IssuesContainer extends Component {
+  componentDidMount() {
+    const { requestIssues } = this.props;
+    requestIssues();
+  }
+
+  render() {
+    const {
+      fetching, issues, error,
+    } = this.props;
+    console.log(issues);
+    return (
+
+      <IssuesContainerWrapper>
+        { !!issues
+          && issues.map(issue => <Issue key={issue.id} issue={issue} />)
+
+        }
+
+        {/* {fetching ? ( */}
+        {/* <button disabled>Fetching...</button> */}
+        {/* ) : ( */}
+        {/* <button onClick={requestIssues}>Request a Issues</button> */}
+        {/* )} */}
+
+        {/* {error && <p style={{ color: 'red' }}>Uh oh - something went wrong!</p>} */}
+
+      </IssuesContainerWrapper>
+    );
+  }
+}
+
+const mapStateToProps = state => ({
+  fetching: state.fetching,
+  issues: state.issues,
+  error: state.error,
+});
+
+const mapDispatchToProps = dispatch => ({
+  requestIssues: () => dispatch(getGitIssues()),
+});
+
+export default connect(mapStateToProps, mapDispatchToProps)(IssuesContainer);

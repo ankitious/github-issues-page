@@ -1,53 +1,69 @@
 import React from 'react';
-import Detail from "../commons/Detail";
-import SearchSVG from "../commons/svg/SearchSVG";
-import styled from "styled-components";
-import Caret from "../commons/Caret";
-
-const SearchBar = (props) =>
-  <span>
-      <input
-        type="text"
-        value="is:issue is:open"
-        />
-        <SearchSVG/>
-  </span>;
+import styled from 'styled-components';
+import Detail from '../commons/Detail';
+import SearchSVG from '../commons/svg/SearchSVG';
+import Caret from '../commons/Caret';
+import Input from './Input';
+import FiltersContainer from './FiltersContainer';
+import CreateNewIssueButton from './CreateNewIssueButton';
 
 const SubNavContainer = styled.div`
   display: flex;
+  align-items: baseline;
   flex-direction: row;
+  justify-content: space-between;
+  
+   @media (max-width: 820px) {
+    flex-direction: column;
+   }
 `;
 
-const FiltersContainer = styled.div`
-    border: 1px solid rgba(27,31,35,.2);
-    border-radius: .25em;
-    cursor: pointer;
-    display: inline-block;
-    font-size: 14px;
-    font-weight: 600;
-    line-height: 20px;
-    padding: 6px 12px;
-    position: relative;
-    vertical-align: middle;
-    white-space: nowrap;
-    background-color: #eff3f6;
-    background-image: linear-gradient(-180deg,#fafbfc,#eff3f6 90%);
-    border-bottom-right-radius: 0;
-    border-top-right-radius: 0;
-    color: #444d56;
+const SearchContainer = styled.div`
+    display : inline-block;
+    position : relative;
+    
+    @media (max-width: 820px) {
+     margin-top : 10px;
+    }
 `;
-const SubNav = () =>
 
-
+const FilterNSearchContainer = styled.div`
+  display : flex;
+  alignItems : baseline;
+  
+  @media (max-width: 820px) {
+    flex-direction: column;
+   }
+`;
+const SubNav = () => (
   <SubNavContainer>
-    <FiltersContainer>
-      Filters
-      <Caret />
-    </FiltersContainer>
+    <FilterNSearchContainer>
+      <div>
+        <FiltersContainer>
+          Filters
+          <Caret />
+        </FiltersContainer>
+        <SearchContainer>
+          <Input type="text" defaultValue="is:issue is:open " />
+          <SearchSVG />
+        </SearchContainer>
+      </div>
+      <Detail
+        tag="Labels"
+        value="Milestones"
+        tagBackgroundColor="#ffffff"
+        valueBackgroundColor="#ffffff"
+        tagPadding="9px 14px"
+        valuePadding="9px 14px"
+      />
+
+    </FilterNSearchContainer>
+
+    <CreateNewIssueButton>
+      New issue
+    </CreateNewIssueButton>
 
   </SubNavContainer>
-
-
-;
+);
 
 export default SubNav;

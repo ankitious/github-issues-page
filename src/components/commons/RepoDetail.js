@@ -1,9 +1,9 @@
 import React from 'react';
 import styled from 'styled-components';
-import WatchSVG from "./svg/WatchSVG";
-import StarSVG from "./svg/StarSVG";
-import ForkSVG from "./svg/ForkSVG";
-import Caret from "./Caret";
+import WatchSVG from './svg/WatchSVG';
+import StarSVG from './svg/StarSVG';
+import ForkSVG from './svg/ForkSVG';
+import Caret from './Caret';
 
 const RepoDetailContainer = styled.div`
   display: inline-block;
@@ -37,18 +37,19 @@ const RepoDetailValueContainer = styled.span`
    background-color : #ffffff;
 `;
 
-const RepoDetail = (props) =>
+const RepoDetail = props => (
   <RepoDetailContainer>
     <RepoDetailTagContainer>
-      { props.tag === "Watch" && <WatchSVG/> }
-      { props.tag === "Star" &&  <StarSVG/>  }
-      { props.tag === "Fork" &&  <ForkSVG/>  }
+      { props.tag === 'Watch' && <WatchSVG /> }
+      { props.tag === 'Star' && <StarSVG /> }
+      { props.tag === 'Fork' && <ForkSVG /> }
 
       {props.tag}
-      <Caret/>
-      </RepoDetailTagContainer>
+      <Caret />
+    </RepoDetailTagContainer>
     <RepoDetailValueContainer>{props.value}</RepoDetailValueContainer>
-  </RepoDetailContainer>;
+  </RepoDetailContainer>
+);
 
 
 export default RepoDetail;

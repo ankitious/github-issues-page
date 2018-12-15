@@ -1,16 +1,16 @@
-import styled from "styled-components";
-import CodeSVG from "../commons/svg/CodeSVG";
-import IssueOpenedSVG from "../commons/svg/IssueOpenedSVG";
-import PrSVG from "../commons/svg/PrSVG";
-import ProjectSVG from "../commons/svg/ProjectSVG";
-import InsightsSVG from "../commons/svg/InsightsSVG";
-import React from "react";
+import styled from 'styled-components';
+import React from 'react';
+import CodeSVG from '../commons/svg/CodeSVG';
+import IssueOpenedSVG from '../commons/svg/IssueOpenedSVG';
+import PrSVG from '../commons/svg/PrSVG';
+import ProjectSVG from '../commons/svg/ProjectSVG';
+import InsightsSVG from '../commons/svg/InsightsSVG';
 
 const NavigationItemWrapper = styled.div`
     border: 1px solid transparent;
     border-radius: 3px 3px 0 0;
     border-top: 3px solid transparent;
-    color: ${props => props.selected ? '#24292e' : '#586069'};
+    color: ${props => (props.selected ? '#24292e' : '#586069')};
     float: left;
     padding: 7px 15px 8px;
     white-space: nowrap;
@@ -34,18 +34,19 @@ const NavigationItemValue = styled.span`
     margin-left: 2px;
 `;
 
-const NavigationItem = (props) =>
+const NavigationItem = props => (
   <NavigationItemWrapper selected={props.selected}>
-    {props.name === 'Code' && <CodeSVG/> }
+    {props.name === 'Code' && <CodeSVG /> }
     {props.name === 'Issues' && <IssueOpenedSVG selected />}
-    {props.name === 'Pull Requests' && <PrSVG/>}
-    {props.name === 'Projects' && <ProjectSVG/>}
-    {props.name === 'Insights' && <InsightsSVG/>}
+    {props.name === 'Pull Requests' && <PrSVG />}
+    {props.name === 'Projects' && <ProjectSVG />}
+    {props.name === 'Insights' && <InsightsSVG />}
     <span>{props.name}</span>
-    {  !!props.value ?
-           <NavigationItemValue>{props.value}</NavigationItemValue> :
-           <span>{props.value}</span>
+    { props.value
+      ? <NavigationItemValue>{props.value}</NavigationItemValue>
+      : <span>{props.value}</span>
     }
-  </NavigationItemWrapper>;
+  </NavigationItemWrapper>
+);
 
 export default NavigationItem;
