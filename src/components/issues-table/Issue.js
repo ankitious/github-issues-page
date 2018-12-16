@@ -4,8 +4,11 @@ import IssueOpenedSVG from '../commons/svg/IssueOpenedSVG';
 import Anchor from '../commons/Anchor';
 import { getDifference } from '../commons/getTimeDifference';
 import Labels from "./Labels";
-import { GIT_ISSUE_ENDPOINT } from '../../api/constants';
-
+import {GIT_ISSUE_ENDPOINT, OWNER, REPO, WEB_URL} from '../../api/constants';
+import IssueAnchor from "./IssueAnchor";
+import IssueWrapper from "./IssueWrapper";
+import IssueAnchorNTitleWrapper from "./IssueAnchorNTitleWrapper";
+import IssueOpenedBy from "./IssueOpenedBy";
 
 
 const IssueOpenedIconWrapper = styled.div`
@@ -14,47 +17,11 @@ const IssueOpenedIconWrapper = styled.div`
 `;
 
 
-const IssueAnchor = styled(Anchor)`
-
-   font-weight: 550;
-   color:#24292e;
-   display: inline-block;
-   font-size : 16px;
-   width : 75%;
-   
-   &:hover {
-     color : #0366d6;
-     text-decoration : none;
-   }
-`;
-
-const IssueAnchorNTitleWrapper = styled.div`
-  display : flex;
-  flex-direction : row;
-  align-items: baseline;
-  padding-top: 2px;
-`;
-
-const IssueWrapper = styled.div`
-   border :  1px solid #e1e4e8;
-   background-color : #fff;
-   font-size:16px;
-   display : flex;
-   flex-direction : column;
-   
-   &:hover {
-     background-color : #f6f8fa;
-   }
-`;
-
-const IssueOpenedBy = styled.div`
-   font-size : 12px;
+const UserAnchor = styled.a`
+   text-decoration : none;
    color : #586069;
-   line-height: 1.25;
-   margin-top: 0.3%;
-   margin-left : 3%;
-   padding-bottom: 8px;
 `;
+
 
 const Issue = (props) => {
   const {
@@ -85,9 +52,9 @@ opened
           {' '}
           ago by
           {' '}
-          <Anchor href={`https://github.com/facebook/react/issues/created_by/${login}`}>
+          <UserAnchor href={`${WEB_URL}/${OWNER}/${REPO}/issues/created_by/${login}`}>
             {login}
-          </Anchor>
+          </UserAnchor>
         </span>
 
       </IssueOpenedBy>

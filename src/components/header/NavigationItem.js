@@ -34,17 +34,22 @@ const NavigationItemValue = styled.span`
     margin-left: 2px;
 `;
 
-const NavigationItem = props => (
-  <NavigationItemWrapper selected={props.selected}>
-    {props.name === 'Code' && <CodeSVG /> }
-    {props.name === 'Issues' && <IssueOpenedSVG selected />}
-    {props.name === 'Pull Requests' && <PrSVG />}
-    {props.name === 'Projects' && <ProjectSVG />}
-    {props.name === 'Insights' && <InsightsSVG />}
-    <span>{props.name}</span>
-    { props.value
-      ? <NavigationItemValue>{props.value}</NavigationItemValue>
-      : <span>{props.value}</span>
+const NavigationItemAnchor = styled.a`
+    text-decoration : none;
+    color : #586069;
+`;
+
+const NavigationItem = ({name, selected, value, url}) => (
+  <NavigationItemWrapper selected={selected}>
+    {name === 'Code' && <CodeSVG /> }
+    {name === 'Issues' && <IssueOpenedSVG selected />}
+    {name === 'Pull Requests' && <PrSVG />}
+    {name === 'Projects' && <ProjectSVG />}
+    {name === 'Insights' && <InsightsSVG />}
+    <NavigationItemAnchor href={url}>{name}</NavigationItemAnchor>
+    { value
+      ? <NavigationItemValue>{value}</NavigationItemValue>
+      : <span>{value}</span>
     }
   </NavigationItemWrapper>
 );

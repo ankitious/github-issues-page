@@ -1,9 +1,10 @@
 import styled from 'styled-components';
 
-const CreateNewIssueButton = styled.div`
+const CreateNewIssueButton = styled.a`
     background-color: #28a745;
     background-image: linear-gradient(-180deg,#34d058,#28a745 90%);
     color: #fff;
+    text-decoration:none;
     background-position: -1px -1px;
     background-repeat: repeat-x;
     background-size: 110% 110%;

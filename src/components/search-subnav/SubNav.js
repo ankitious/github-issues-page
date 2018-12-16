@@ -6,6 +6,7 @@ import Caret from '../commons/Caret';
 import Input from './Input';
 import FiltersContainer from './FiltersContainer';
 import CreateNewIssueButton from './CreateNewIssueButton';
+import {OWNER, REPO, WEB_URL} from "../../api/constants";
 
 const SubNavContainer = styled.div`
   display: flex;
@@ -48,6 +49,7 @@ const SubNav = () => (
           <SearchSVG />
         </SearchContainer>
       </div>
+
       <Detail
         tag="Labels"
         value="Milestones"
@@ -55,11 +57,15 @@ const SubNav = () => (
         valueBackgroundColor="#ffffff"
         tagPadding="9px 14px"
         valuePadding="9px 14px"
+        tagHref={`${WEB_URL}/${OWNER}/${REPO}/labels`}
+        valueHref={`${WEB_URL}/${OWNER}/${REPO}/milestones`}
       />
 
     </FilterNSearchContainer>
 
-    <CreateNewIssueButton>
+    <CreateNewIssueButton
+     href={`${WEB_URL}/${OWNER}/${REPO}/issues/new`}
+    >
       New issue
     </CreateNewIssueButton>
 

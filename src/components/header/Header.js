@@ -6,13 +6,14 @@ import NavigationItem from './NavigationItem';
 import Nav from './Nav';
 import Navmenus from './Navmenus';
 import RepoLogoSVG from '../commons/svg/RepoLogoSVG';
+import {OWNER, REPO, WEB_URL} from "../../api/constants";
 
 const navigationValues = [
-  { name: 'Code', value: '', selected: false },
+  { name: 'Code', value: '', selected: false, url : `${WEB_URL}/${OWNER}/${REPO}` },
   { name: 'Issues', value: 253, selected: true },
-  { name: 'Pull Requests', value: 72, selected: false },
-  { name: 'Projects', value: 2, selected: false },
-  { name: 'Insights', value: '', selected: false },
+  { name: 'Pull Requests', value: 72, selected: false, url : `${WEB_URL}/${OWNER}/${REPO}/pulls` },
+  { name: 'Projects', value: 2, selected: false , url : `${WEB_URL}/${OWNER}/${REPO}/projects` },
+  { name: 'Insights', value: '', selected: false, url : `${WEB_URL}/${OWNER}/${REPO}/insights` },
 ];
 
 
@@ -66,9 +67,7 @@ const Header = ({
         navigationValues.map(item => (
           <NavigationItem
             key={item.name}
-            name={item.name}
-            value={item.value}
-            selected={item.selected}
+            {...item}
           />
         ))
       }

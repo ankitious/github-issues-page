@@ -12,9 +12,10 @@ const DetailContainer = styled.div`
     } 
 `;
 
-const DetailTagContainer = styled.span`
+const DetailTagContainer = styled.a`
    border: 1px solid #cdcfd1;
    border-width: 1px 0px 1px 1px;
+   text-decoration:none;
    padding: ${prop => prop.padding};
    border-radius : 2px 0px 0px 2px;
    background-color : ${prop => prop.backgroundColor};
@@ -28,11 +29,12 @@ const DetailTagContainer = styled.span`
 `;
 
 
-const DetailValueContainer = styled.span`
+const DetailValueContainer = styled.a`
    border: 1px solid #cdcfd1;
    padding: ${prop => prop.padding};
    border-radius : 0px 2px 2px 0px;
    line-height: 20px;
+   text-decoration:none;
    color : #586069;
    font-weight : bold;
    cursor : pointer;
@@ -41,19 +43,24 @@ const DetailValueContainer = styled.span`
 `;
 
 
-const Detail = props => (
+const Detail = ({
+                    tagBackgroundColor, tagPadding, tag, tagHref,
+                    valueBackgroundColor, valuePadding, value, valueHref
+                }) => (
   <DetailContainer>
     <DetailTagContainer
-      backgroundColor={props.tagBackgroundColor}
-      padding={props.tagPadding}
+      backgroundColor={tagBackgroundColor}
+      padding={tagPadding}
+      href={tagHref}
     >
-      {props.tag}
+      {tag}
     </DetailTagContainer>
     <DetailValueContainer
-      backgroundColor={props.valueBackgroundColor}
-      padding={props.valuePadding}
+      backgroundColor={valueBackgroundColor}
+      padding={valuePadding}
+      href={valueHref}
     >
-      {props.value}
+      {value}
     </DetailValueContainer>
   </DetailContainer>
 );
