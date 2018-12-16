@@ -17,7 +17,7 @@ export function repoInfoData(state = initialState, action) {
       return { ...state, fetching: false, repoInfo: action.repoInfo };
     case FETCH_REPOINFO_FAILURE:
       return {
-        ...state, fetching: false, repoInfo: {}, error: action.error,
+        ...state, fetching: false, repoInfo: initialState, error: action.error,
       };
     default:
       return state;

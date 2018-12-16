@@ -29,7 +29,7 @@ const mapStateToProps = state => {
   const { repoInfoData } = state;
 
   const {fetching , repoInfo, error} = repoInfoData || {
-    isFetching: true,
+    fetching: true,
     repoInfo: {}
   }
 

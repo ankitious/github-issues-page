@@ -6,7 +6,6 @@ import Issue from '../components/issues-table/Issue';
 
 const IssuesContainerWrapper = styled.div`
    border :  1px solid #e1e4e8;
-   margin-top: 20px;
    border-collapse : collapse;
 
 `;
@@ -48,9 +47,8 @@ const mapStateToProps = state => {
   const { issuesData } = state;
 
   const {fetching , issues, error} = issuesData || {
-    isFetching: true,
-    issues: []
-  }
+    fetching: true
+  };
 
     return {
       fetching,

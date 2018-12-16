@@ -18,7 +18,7 @@ export function issuesData(state = initialState, action) {
       return { ...state, fetching: false, issues: action.issues };
     case API_CALL_FAILURE:
       return {
-        ...state, fetching: false, issues: [], error: action.error,
+        ...state, fetching: false, issues: initialState, error: action.error,
       };
     default:
       return state;

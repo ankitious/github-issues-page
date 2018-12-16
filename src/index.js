@@ -20,7 +20,7 @@ const reduxDevTools = window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVT
 // create a redux store with our reducer above and middleware
 const store = createStore(
   rootReducer,
-  compose(applyMiddleware(sagaMiddleware), reduxDevTools),
+  compose(applyMiddleware(sagaMiddleware)),
 );
 
 // run the saga

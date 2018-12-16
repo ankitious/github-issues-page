@@ -8,6 +8,7 @@ const IssueAnchor = styled(Anchor)`
    display: inline-block;
    font-size : 16px;
    width : 75%;
+   padding-left: 4px;
    
    &:hover {
      color : #0366d6;

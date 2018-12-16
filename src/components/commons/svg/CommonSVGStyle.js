@@ -8,6 +8,10 @@ const CommonSVGStyle = styled.svg`
   position : relative;
   top : 2px;
   display : inline-block;
+  
+  &:hover {
+    color : ${props => props.hoverColor && props.hoverColor }
+  }
 `;
 
 export default CommonSVGStyle;
