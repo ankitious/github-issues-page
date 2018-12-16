@@ -45,6 +45,8 @@ const otherValues = ['Auther', 'Label', 'Projects', 'Milestones', 'Assignee', 'S
 const DetailSpan = styled.span`
      padding-left: 15px;
      padding-right: 15px;
+     padding-top: 5px;
+     padding-bottom: 5px;
      color: #586069;
      &:hover {
      color : #24292e;
@@ -52,7 +54,17 @@ const DetailSpan = styled.span`
 `;
 const OtherDetail = ({value}) => <DetailSpan>{value} <Caret/> </DetailSpan>;
 
-const OtherDetails = styled.div``;
+const OtherDetails = styled.div`
+   display : flex;
+   flex-direction : row;
+   
+   @media (max-width: 820px) {
+        flex-direction : column;
+      }
+   
+`;
+
+
 const IssuesTableHeader = () =>
 <IssuesTableHeaderContainer>
     <OpenClosedIssueDetails>

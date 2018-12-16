@@ -20,6 +20,10 @@ const IssueOpenedIconWrapper = styled.div`
 const UserAnchor = styled.a`
    text-decoration : none;
    color : #586069;
+   
+   &:hover {
+     color : #0366d6;
+   }
 `;
 
 

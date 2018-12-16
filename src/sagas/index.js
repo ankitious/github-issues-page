@@ -7,15 +7,14 @@ import {
 } from '../actions';
 import { fetchIssues } from '../api/fetchIssues';
 import {
-  API_CALL_REQUEST, FETCH_REPOINFO_REQUEST,
+  FETCH_ISSUES_REQUEST, FETCH_REPOINFO_REQUEST,
 } from '../actions/constants';
 import { fetchRepoInfo } from '../api/fetchRepoInfo';
 
 
-function* workerSaga(fn, success, failure) {
+export function* workerSaga(fn, success, failure) {
   try {
     const response = yield call(fn);
-    console.log(response.data);
     yield put(success(response.data));
   } catch (error) {
     // dispatch a failure action to the store with the error
@@ -28,7 +27,7 @@ export function* watcherSaga(action, fn, success, failure) {
 }
 
 export function* fetchGithubIssues() {
-  yield call(watcherSaga, API_CALL_REQUEST, fetchIssues, fetchGitIssuesSuccess, fetchGitIssuesFailure);
+  yield call(watcherSaga, FETCH_ISSUES_REQUEST, fetchIssues, fetchGitIssuesSuccess, fetchGitIssuesFailure);
 }
 
 export function* fetchGithubRepoInfo() {

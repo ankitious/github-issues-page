@@ -1,7 +1,7 @@
 import {
-  API_CALL_FAILURE,
-  API_CALL_REQUEST,
-  API_CALL_SUCCESS, FETCH_REPOINFO_FAILURE,
+  FETCH_ISSUES_FAILURE,
+  FETCH_ISSUES_REQUEST,
+  FETCH_ISSUES_SUCCESS, FETCH_REPOINFO_FAILURE,
   FETCH_REPOINFO_REQUEST,
   FETCH_REPOINFO_SUCCESS,
 } from './constants';
@@ -9,14 +9,14 @@ import {
 
 export function fetchGitIssues() {
   return {
-    type: API_CALL_REQUEST,
+    type: FETCH_ISSUES_REQUEST,
   };
 }
 
 
 export function fetchGitIssuesSuccess(issues) {
   return {
-    type: API_CALL_SUCCESS,
+    type: FETCH_ISSUES_SUCCESS,
     issues,
   };
 }
@@ -24,7 +24,7 @@ export function fetchGitIssuesSuccess(issues) {
 
 export function fetchGitIssuesFailure(error) {
   return {
-    type: API_CALL_FAILURE,
+    type: FETCH_ISSUES_FAILURE,
     error,
   };
 }
