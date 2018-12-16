@@ -1,9 +1,8 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import styled from 'styled-components';
-import { getGitIssues } from '../actions';
+import { fetchGitIssues } from "../actions";
 import Issue from '../components/issues-table/Issue';
-
 
 const IssuesContainerWrapper = styled.div`
    border :  1px solid #e1e4e8;
@@ -18,15 +17,17 @@ class IssuesContainer extends Component {
   }
 
   render() {
+
     const {
       fetching, issues, error,
     } = this.props;
+
     console.log(issues);
     return (
 
       <IssuesContainerWrapper>
         { !!issues
-          && issues.map(issue => <Issue key={issue.id} issue={issue} />)
+        && issues.map(issue => <Issue key={issue.id} issue={issue} />)
 
         }
 
@@ -43,14 +44,23 @@ class IssuesContainer extends Component {
   }
 }
 
-const mapStateToProps = state => ({
-  fetching: state.fetching,
-  issues: state.issues,
-  error: state.error,
-});
+const mapStateToProps = state => {
+  const { issuesData } = state;
+
+  const {fetching , issues, error} = issuesData || {
+    isFetching: true,
+    issues: []
+  }
+
+    return {
+      fetching,
+      issues,
+      error
+    }
+};
 
 const mapDispatchToProps = dispatch => ({
-  requestIssues: () => dispatch(getGitIssues()),
+  requestIssues: () => dispatch(fetchGitIssues()),
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(IssuesContainer);

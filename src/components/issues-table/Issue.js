@@ -4,6 +4,8 @@ import IssueOpenedSVG from '../commons/svg/IssueOpenedSVG';
 import Anchor from '../commons/Anchor';
 import { getDifference } from '../commons/getTimeDifference';
 import Labels from "./Labels";
+import { GIT_ISSUE_ENDPOINT } from '../../api/constants';
+
 
 
 const IssueOpenedIconWrapper = styled.div`
@@ -19,7 +21,6 @@ const IssueAnchor = styled(Anchor)`
    display: inline-block;
    font-size : 16px;
    width : 75%;
-   
    
    &:hover {
      color : #0366d6;
@@ -52,9 +53,9 @@ const IssueOpenedBy = styled.div`
    line-height: 1.25;
    margin-top: 0.3%;
    margin-left : 3%;
-   padding-bottom: 8px;;
-
+   padding-bottom: 8px;
 `;
+
 const Issue = (props) => {
   const {
     title, number, created_at, user: { login }, labels,
@@ -84,7 +85,9 @@ opened
           {' '}
           ago by
           {' '}
-          {login}
+          <Anchor href={`https://github.com/facebook/react/issues/created_by/${login}`}>
+            {login}
+          </Anchor>
         </span>
 
       </IssueOpenedBy>

@@ -5,6 +5,7 @@ import 'normalize.css';
 import SubNav from './search-subnav/SubNav';
 import Issue from './issues-table/Issue';
 import IssuesContainer from '../containers/IssuesContainer';
+import HeaderContainer from "../containers/HeaderContainer";
 
 const Container = styled.div`
   font-size : 14px;
@@ -25,7 +26,7 @@ class App extends Component {
   render() {
     return (
       <Container>
-        <Header />
+        <HeaderContainer/>
         <IssueListingContainer>
           <SubNav />
           <IssuesContainer />

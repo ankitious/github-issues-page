@@ -27,30 +27,37 @@ const RightNav = styled.div`
 `;
 
 
-const Header = () => (
+const Header = ({
+    name ,
+    html_url,
+    owner : { login , url },
+    stargazers_count,
+    subscribers_count,
+    forks_count
+  }) => (
   <Nav>
     <Navmenus row="first">
       <div>
         <RepoLogoSVG />
         <Anchor
-          href="https://github.com/facebook"
+          href={url}
           color="#0366d6"
         >
-           facebook
+          {login}
         </Anchor>
         <PathDivider>/</PathDivider>
         <Anchor
           color="#0366d6"
           fontWeight="bold"
-          href="https://github.com/facebook/create-react-app"
+          href={html_url}
         >
-            create-react-app
+          {name}
         </Anchor>
       </div>
       <RightNav>
-        <RepoDetail tag="Watch" value={1741} />
-        <RepoDetail tag="Star" value={60577} />
-        <RepoDetail tag="Fork" value={13193} />
+        <RepoDetail tag="Watch" value={subscribers_count} />
+        <RepoDetail tag="Star" value={stargazers_count} />
+        <RepoDetail tag="Fork" value={forks_count} />
       </RightNav>
     </Navmenus>
 

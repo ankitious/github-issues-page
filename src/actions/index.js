@@ -1,15 +1,20 @@
-export const API_CALL_REQUEST = 'API_CALL_REQUEST';
-export const API_CALL_SUCCESS = 'API_CALL_SUCCESS';
-export const API_CALL_FAILURE = 'API_CALL_FAILURE';
+import {
+  API_CALL_FAILURE,
+  API_CALL_REQUEST,
+  API_CALL_SUCCESS, FETCH_REPOINFO_FAILURE,
+  FETCH_REPOINFO_REQUEST,
+  FETCH_REPOINFO_SUCCESS,
+} from './constants';
 
-export function getGitIssues() {
+
+export function fetchGitIssues() {
   return {
     type: API_CALL_REQUEST,
   };
 }
 
 
-export function getGitIssuesSuccess(issues) {
+export function fetchGitIssuesSuccess(issues) {
   return {
     type: API_CALL_SUCCESS,
     issues,
@@ -17,9 +22,32 @@ export function getGitIssuesSuccess(issues) {
 }
 
 
-export function getGitIssuesFailure(error) {
+export function fetchGitIssuesFailure(error) {
   return {
     type: API_CALL_FAILURE,
+    error,
+  };
+}
+
+
+export function fetchRepoInfo() {
+  return {
+    type: FETCH_REPOINFO_REQUEST,
+  };
+}
+
+
+export function fetchRepoInfoSuccess(repoInfo) {
+  return {
+    type: FETCH_REPOINFO_SUCCESS,
+    repoInfo,
+  };
+}
+
+
+export function fetchRepoInfoFailure(error) {
+  return {
+    type: FETCH_REPOINFO_FAILURE,
     error,
   };
 }

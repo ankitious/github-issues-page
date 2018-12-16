@@ -1,10 +1,5 @@
 import axios from 'axios';
-
-
-const BASE_URL = 'https://api.github.com';
-
-
-const GIT_ISSUE_ENDPOINT = `${BASE_URL}/repos/facebook/react/issues`;
+import { GIT_ISSUE_ENDPOINT } from './constants';
 
 export function fetchIssues() {
   return axios({
