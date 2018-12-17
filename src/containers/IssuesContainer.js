@@ -1,3 +1,4 @@
+/* eslint-disable no-nested-ternary */
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
@@ -5,7 +6,7 @@ import styled from 'styled-components';
 import { fetchGitIssues } from '../actions';
 import Issue from '../components/issues-table/Issue';
 import LoaderComponent from '../components/commons/LoaderComponent';
-import SomethingWentWrong from "../components/commons/SomethingWentWrong";
+import SomethingWentWrong from '../components/commons/SomethingWentWrong';
 
 const IssuesContainerWrapper = styled.div`
    border :  1px solid #e1e4e8;
@@ -35,7 +36,7 @@ class IssuesContainer extends Component {
       <div>
         {fetching ? (
           <LoaderComponent />
-        ) : (error ? <SomethingWentWrong/>
+        ) : (error ? <SomethingWentWrong />
           : (
             <IssuesContainerWrapper>
               { !!issues

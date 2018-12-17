@@ -26,7 +26,6 @@ const Input = styled.input`
     background-color: #fafbfc;
     color: #586069;
     padding-left: 30px;
-    width: 320px;
     border-bottom-left-radius: 0;
     border-top-left-radius: 0;
     

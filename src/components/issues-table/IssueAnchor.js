@@ -7,8 +7,8 @@ const IssueAnchor = styled(Anchor)`
    color:#24292e;
    display: inline-block;
    font-size : 16px;
-   width : 75%;
    padding-left: 4px;
+   word-break: break-word;
    
    &:hover {
      color : #0366d6;

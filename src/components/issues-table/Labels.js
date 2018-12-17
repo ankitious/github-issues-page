@@ -16,8 +16,13 @@ const Label = styled.span`
     margin-left : 2px;
 `;
 
+const LabelsWrapper = styled.span`
+  &:hover{
+    color : #24292e;
+  } 
+`;
 const Labels = ({ labels }) => (
-  <span>
+  <LabelsWrapper>
     {
       labels.length > 0
       && labels.map(({ id, color, name }) => (
@@ -29,7 +34,7 @@ const Labels = ({ labels }) => (
         </Label>
       ))
     }
-  </span>
+  </LabelsWrapper>
 );
 
 export default Labels;

@@ -17,6 +17,10 @@ const IssuesTableHeaderContainer = styled.div`
     cursor : ponter;
         align-items: center;
     justify-content : space-between;
+    
+      @media (max-width: 820px) {
+        flex-direction : column;
+      }
 `;
 
 const OpenClosedIssueDetails = styled.div`
@@ -38,6 +42,7 @@ const OpenClosedIssueAnchor = styled.a`
     &:hover {
      color : #24292e;
     }
+    
 `;
 
 const otherValues = ['Auther', 'Label', 'Projects', 'Milestones', 'Assignee', 'Sort'];

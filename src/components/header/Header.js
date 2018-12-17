@@ -37,6 +37,12 @@ const RightNav = styled.div`
    }
 `;
 
+const RepoTitleInfo = styled.div`
+@media (max-width: 600px) {
+        padding-top: 15px;
+      }
+
+`;
 
 const Header = ({
   name,
@@ -48,7 +54,7 @@ const Header = ({
 }) => (
   <Nav>
     <Navmenus row="first">
-      <div>
+      <RepoTitleInfo>
         <RepoLogoSVG />
         <Anchor
           href={url}
@@ -64,7 +70,7 @@ const Header = ({
         >
           {name}
         </Anchor>
-      </div>
+      </RepoTitleInfo>
       <RightNav>
         <RepoDetail tag="Watch" value={subscribers_count} />
         <RepoDetail tag="Star" value={stargazers_count} />

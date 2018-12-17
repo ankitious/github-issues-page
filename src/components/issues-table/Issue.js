@@ -27,45 +27,49 @@ const UserAnchor = styled.a`
    }
 `;
 
+const IssueAnchorWithLabel = styled.div`
+ width : 75%;
+`;
 
-const Issue = (props) => {
-  const {
+const Issue = ({
+  issue: {
     title, number, created_at, user: { login }, labels,
-  } = props.issue;
-  return (
-    <IssueWrapper>
-      <IssueAnchorNTitleWrapper>
-        <IssueOpenedIconWrapper>
-          <IssueOpenedSVG color="#28a745" />
-        </IssueOpenedIconWrapper>
-        <IssueAnchor color="#24292e">
+  },
+}) => (
+  <IssueWrapper>
+    <IssueAnchorNTitleWrapper>
+      <IssueOpenedIconWrapper>
+        <IssueOpenedSVG color="#28a745" />
+      </IssueOpenedIconWrapper>
+      <IssueAnchorWithLabel>
+        <IssueAnchor color="#24292e" href={`${WEB_URL}/${OWNER}/${REPO}/issues/${number}`}>
           {' '}
           {title}
-          <Labels labels={labels} />
         </IssueAnchor>
-      </IssueAnchorNTitleWrapper>
+        <Labels labels={labels} />
+      </IssueAnchorWithLabel>
+    </IssueAnchorNTitleWrapper>
 
-      <IssueOpenedBy>
-        <span>
+    <IssueOpenedBy>
+      <span>
 #
-          {number}
-          {' '}
+        {number}
+        {' '}
 
 opened
-          {' '}
-          {getDifference(created_at)}
-          {' '}
+        {' '}
+        {getDifference(created_at)}
+        {' '}
           ago by
-          {' '}
-          <UserAnchor href={`${WEB_URL}/${OWNER}/${REPO}/issues/created_by/${login}`}>
-            {login}
-          </UserAnchor>
-        </span>
+        {' '}
+        <UserAnchor href={`${WEB_URL}/${OWNER}/${REPO}/issues/created_by/${login}`}>
+          {login}
+        </UserAnchor>
+      </span>
 
-      </IssueOpenedBy>
+    </IssueOpenedBy>
 
-    </IssueWrapper>);
-};
+  </IssueWrapper>);
 
 export default Issue;
 
