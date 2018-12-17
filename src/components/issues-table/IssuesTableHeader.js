@@ -1,9 +1,9 @@
 import styled from 'styled-components';
-import React from "react";
-import IssueOpenedSVG from "../commons/svg/IssueOpenedSVG";
-import {OWNER, REPO, WEB_URL} from "../../api/constants";
-import CompletedSVG from "../commons/svg/CompletedSVG";
-import Caret from "../commons/Caret";
+import React from 'react';
+import IssueOpenedSVG from '../commons/svg/IssueOpenedSVG';
+import { OWNER, REPO, WEB_URL } from '../../api/constants';
+import CompletedSVG from '../commons/svg/CompletedSVG';
+import Caret from '../commons/Caret';
 
 const IssuesTableHeaderContainer = styled.div`
     background-color: #f6f8fa;
@@ -29,12 +29,12 @@ const OpenClosedIssueAnchor = styled.a`
     border-radius: 3px 3px 0 0;
     border-top: 3px solid transparent;
     float: left;
-    font-weight : ${props => props.selected ? 'bold' : 'none'}
+    font-weight : ${props => (props.selected ? 'bold' : 'none')}
     padding: 13px 0px;
     white-space: nowrap;
     cursor : pointer;
     text-decoration : none;
-    color : ${props => props.selected ? '#24292e' : '#586069'};
+    color : ${props => (props.selected ? '#24292e' : '#586069')};
     &:hover {
      color : #24292e;
     }
@@ -52,7 +52,14 @@ const DetailSpan = styled.span`
      color : #24292e;
     }
 `;
-const OtherDetail = ({value}) => <DetailSpan>{value} <Caret/> </DetailSpan>;
+const OtherDetail = ({ value }) => (
+  <DetailSpan>
+    {value}
+    {' '}
+    <Caret />
+    {' '}
+  </DetailSpan>
+);
 
 const OtherDetails = styled.div`
    display : flex;
@@ -65,26 +72,28 @@ const OtherDetails = styled.div`
 `;
 
 
-const IssuesTableHeader = () =>
-<IssuesTableHeaderContainer>
+const IssuesTableHeader = () => (
+  <IssuesTableHeaderContainer>
     <OpenClosedIssueDetails>
-        <OpenClosedIssueAnchor
-            selected
-            href={`${WEB_URL}/${OWNER}/${REPO}/issues?q=is%3Aopen+is%3Aissue`}>
-            <IssueOpenedSVG/>
+      <OpenClosedIssueAnchor
+        selected
+        href={`${WEB_URL}/${OWNER}/${REPO}/issues?q=is%3Aopen+is%3Aissue`}
+      >
+        <IssueOpenedSVG />
             253 Open
-        </OpenClosedIssueAnchor>
-        <OpenClosedIssueAnchor
-            style={ {marginLeft : '10px' }}
-            href={`${WEB_URL}/${OWNER}/${REPO}/issues?q=is%3Aopen+is%3Aissue`}>
-            <CompletedSVG color={'#586069'} hoverColor={'#24292e'}/>
+      </OpenClosedIssueAnchor>
+      <OpenClosedIssueAnchor
+        style={{ marginLeft: '10px' }}
+        href={`${WEB_URL}/${OWNER}/${REPO}/issues?q=is%3Aopen+is%3Aissue`}
+      >
+        <CompletedSVG color="#586069" hoverColor="#24292e" />
             6378 closed
-        </OpenClosedIssueAnchor>
+      </OpenClosedIssueAnchor>
     </OpenClosedIssueDetails>
     <OtherDetails>
-        {otherValues.map(value => <OtherDetail key={value} value={value}/>)}
+      {otherValues.map(value => <OtherDetail key={value} value={value} />)}
     </OtherDetails>
-</IssuesTableHeaderContainer>;
+  </IssuesTableHeaderContainer>
+);
 
 export default IssuesTableHeader;
-

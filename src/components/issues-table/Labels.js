@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import PropTypes from 'prop-types';
 
 
 const Label = styled.span`
@@ -32,3 +33,20 @@ const Labels = ({ labels }) => (
 );
 
 export default Labels;
+
+
+Labels.propTypes = {
+
+  labels: PropTypes.arrayOf(
+    PropTypes.objectOf(
+      PropTypes.shape({
+        id: PropTypes.number.isRequired,
+        color: PropTypes.string.isRequired,
+        name: PropTypes.string.isRequired,
+      }),
+
+    ),
+  ).isRequired,
+
+
+};

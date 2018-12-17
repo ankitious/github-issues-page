@@ -1,8 +1,8 @@
 import {
   FETCH_ISSUES_FAILURE,
   FETCH_ISSUES_REQUEST,
-  FETCH_ISSUES_SUCCESS
-} from "../actions/constants";
+  FETCH_ISSUES_SUCCESS,
+} from '../actions/constants';
 
 const initialState = {
   fetching: false,

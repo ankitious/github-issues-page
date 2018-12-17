@@ -1,19 +1,29 @@
+/* eslint-disable camelcase */
 import React from 'react';
 import styled from 'styled-components';
+import PropTypes from 'prop-types';
 import Anchor from '../commons/Anchor';
 import RepoDetail from '../commons/RepoDetail';
 import NavigationItem from './NavigationItem';
 import Nav from './Nav';
 import Navmenus from './Navmenus';
 import RepoLogoSVG from '../commons/svg/RepoLogoSVG';
-import {OWNER, REPO, WEB_URL} from "../../api/constants";
+import { OWNER, REPO, WEB_URL } from '../../api/constants';
 
 const navigationValues = [
-  { name: 'Code', value: '', selected: false, url : `${WEB_URL}/${OWNER}/${REPO}` },
+  {
+    name: 'Code', selected: false, url: `${WEB_URL}/${OWNER}/${REPO}`,
+  },
   { name: 'Issues', value: 253, selected: true },
-  { name: 'Pull Requests', value: 72, selected: false, url : `${WEB_URL}/${OWNER}/${REPO}/pulls` },
-  { name: 'Projects', value: 2, selected: false , url : `${WEB_URL}/${OWNER}/${REPO}/projects` },
-  { name: 'Insights', value: '', selected: false, url : `${WEB_URL}/${OWNER}/${REPO}/insights` },
+  {
+    name: 'Pull Requests', value: 72, selected: false, url: `${WEB_URL}/${OWNER}/${REPO}/pulls`,
+  },
+  {
+    name: 'Projects', value: 2, selected: false, url: `${WEB_URL}/${OWNER}/${REPO}/projects`,
+  },
+  {
+    name: 'Insights', selected: false, url: `${WEB_URL}/${OWNER}/${REPO}/insights`,
+  },
 ];
 
 
@@ -29,13 +39,13 @@ const RightNav = styled.div`
 
 
 const Header = ({
-    name ,
-    html_url,
-    owner : { login , url },
-    stargazers_count,
-    subscribers_count,
-    forks_count
-  }) => (
+  name,
+  html_url,
+  owner: { login, url },
+  stargazers_count,
+  subscribers_count,
+  forks_count,
+}) => (
   <Nav>
     <Navmenus row="first">
       <div>
@@ -75,5 +85,19 @@ const Header = ({
   </Nav>
 );
 
-
 export default Header;
+
+
+Header.propTypes = {
+  name: PropTypes.string.isRequired,
+  html_url: PropTypes.string.isRequired,
+  owner: PropTypes.objectOf(
+    PropTypes.shape({
+      login: PropTypes.string.isRequired,
+      url: PropTypes.string.isRequired,
+    }),
+  ).isRequired,
+  stargazers_count: PropTypes.number.isRequired,
+  subscribers_count: PropTypes.number.isRequired,
+  forks_count: PropTypes.number.isRequired,
+};

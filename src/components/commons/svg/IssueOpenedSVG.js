@@ -1,4 +1,6 @@
 import React from 'react';
+import PropTypes from 'prop-types';
+
 import CommonSVGStyle from './CommonSVGStyle';
 
 const IssueOpenedSVG = ({ color }) => (
@@ -13,3 +15,8 @@ const IssueOpenedSVG = ({ color }) => (
 );
 
 export default IssueOpenedSVG;
+
+
+IssueOpenedSVG.propTypes = {
+  color: PropTypes.string.isRequired,
+};

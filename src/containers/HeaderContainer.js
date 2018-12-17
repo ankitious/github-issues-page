@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import styled from 'styled-components';
+import PropTypes from 'prop-types';
 import { fetchRepoInfo } from '../actions';
 import Header from '../components/header/Header';
 
@@ -17,27 +17,27 @@ class HeaderContainer extends Component {
     } = this.props;
     return (
       <div>
-        { !!repoInfo && Object.keys(repoInfo).length > 0 &&
-             <Header {...repoInfo}/>
+        { !!repoInfo && Object.keys(repoInfo).length > 0
+             && <Header {...repoInfo} />
         }
       </div>
     );
   }
 }
 
-const mapStateToProps = state => {
+const mapStateToProps = (state) => {
   const { repoInfoData } = state;
 
-  const {fetching , repoInfo, error} = repoInfoData || {
+  const { fetching, repoInfo, error } = repoInfoData || {
     fetching: true,
-    repoInfo: {}
-  }
+    repoInfo: {},
+  };
 
   return {
     fetching,
     repoInfo,
-    error
-  }
+    error,
+  };
 };
 
 const mapDispatchToProps = dispatch => ({
@@ -45,3 +45,11 @@ const mapDispatchToProps = dispatch => ({
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(HeaderContainer);
+
+
+HeaderContainer.propTypes = {
+  requestRepoInfo: PropTypes.func.isRequired,
+  fetching: PropTypes.bool.isRequired,
+  error: PropTypes.string.isRequired,
+  repoInfo: PropTypes.object.isRequired,
+};

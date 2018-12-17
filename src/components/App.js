@@ -1,12 +1,9 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
-import Header from './header/Header';
 import 'normalize.css';
 import SubNav from './search-subnav/SubNav';
-import Issue from './issues-table/Issue';
-import IssuesContainer from '../containers/IssuesContainer';
-import HeaderContainer from "../containers/HeaderContainer";
-import IssuesTable from "./issues-table/IssuesTable";
+import HeaderContainer from '../containers/HeaderContainer';
+import IssuesTable from './issues-table/IssuesTable';
 
 const Container = styled.div`
   font-size : 14px;
@@ -27,7 +24,7 @@ class App extends Component {
   render() {
     return (
       <Container>
-        <HeaderContainer/>
+        <HeaderContainer />
         <IssueListingContainer>
           <SubNav />
           <IssuesTable />

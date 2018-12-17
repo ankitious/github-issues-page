@@ -1,14 +1,15 @@
+/* eslint-disable camelcase */
 import React from 'react';
 import styled from 'styled-components';
+import PropTypes from 'prop-types';
 import IssueOpenedSVG from '../commons/svg/IssueOpenedSVG';
-import Anchor from '../commons/Anchor';
 import { getDifference } from '../commons/getTimeDifference';
-import Labels from "./Labels";
-import {GIT_ISSUE_ENDPOINT, OWNER, REPO, WEB_URL} from '../../api/constants';
-import IssueAnchor from "./IssueAnchor";
-import IssueWrapper from "./IssueWrapper";
-import IssueAnchorNTitleWrapper from "./IssueAnchorNTitleWrapper";
-import IssueOpenedBy from "./IssueOpenedBy";
+import Labels from './Labels';
+import { OWNER, REPO, WEB_URL } from '../../api/constants';
+import IssueAnchor from './IssueAnchor';
+import IssueWrapper from './IssueWrapper';
+import IssueAnchorNTitleWrapper from './IssueAnchorNTitleWrapper';
+import IssueOpenedBy from './IssueOpenedBy';
 
 
 const IssueOpenedIconWrapper = styled.div`
@@ -67,3 +68,22 @@ opened
 };
 
 export default Issue;
+
+
+Issue.propTypes = {
+  issue: PropTypes.objectOf(
+    {
+      title: PropTypes.string.isRequired,
+      number: PropTypes.number.isRequired,
+      user: PropTypes.objectOf(
+        PropTypes.shape({
+          login: PropTypes.string.isRequired,
+        }),
+      ).isRequired,
+      created_at: PropTypes.string.isRequired,
+      labels: PropTypes.string.isRequired,
+    },
+
+  ).isRequired,
+
+};

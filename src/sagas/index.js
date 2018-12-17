@@ -27,11 +27,13 @@ export function* watcherSaga(action, fn, success, failure) {
 }
 
 export function* fetchGithubIssues() {
-  yield call(watcherSaga, FETCH_ISSUES_REQUEST, fetchIssues, fetchGitIssuesSuccess, fetchGitIssuesFailure);
+  yield call(watcherSaga, FETCH_ISSUES_REQUEST,
+    fetchIssues, fetchGitIssuesSuccess, fetchGitIssuesFailure);
 }
 
 export function* fetchGithubRepoInfo() {
-  yield call(watcherSaga, FETCH_REPOINFO_REQUEST, fetchRepoInfo, fetchRepoInfoSuccess, fetchRepoInfoFailure);
+  yield call(watcherSaga, FETCH_REPOINFO_REQUEST,
+    fetchRepoInfo, fetchRepoInfoSuccess, fetchRepoInfoFailure);
 }
 
 

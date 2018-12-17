@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import PropTypes from 'prop-types';
 import styled from 'styled-components';
-import { fetchGitIssues } from "../actions";
+import { fetchGitIssues } from '../actions';
 import Issue from '../components/issues-table/Issue';
 
 const IssuesContainerWrapper = styled.div`
@@ -16,7 +17,6 @@ class IssuesContainer extends Component {
   }
 
   render() {
-
     const {
       fetching, issues, error,
     } = this.props;
@@ -43,18 +43,18 @@ class IssuesContainer extends Component {
   }
 }
 
-const mapStateToProps = state => {
+const mapStateToProps = (state) => {
   const { issuesData } = state;
 
-  const {fetching , issues, error} = issuesData || {
-    fetching: true
+  const { fetching, issues, error } = issuesData || {
+    fetching: true,
   };
 
-    return {
-      fetching,
-      issues,
-      error
-    }
+  return {
+    fetching,
+    issues,
+    error,
+  };
 };
 
 const mapDispatchToProps = dispatch => ({
@@ -62,3 +62,13 @@ const mapDispatchToProps = dispatch => ({
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(IssuesContainer);
+
+
+IssuesContainer.propTypes = {
+  requestIssues: PropTypes.func.isRequired,
+  fetching: PropTypes.bool.isRequired,
+  error: PropTypes.string.isRequired,
+  issues: PropTypes.arrayOf(
+    PropTypes.object.isRequired,
+  ).isRequired,
+};

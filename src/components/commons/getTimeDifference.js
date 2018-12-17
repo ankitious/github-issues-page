@@ -6,4 +6,5 @@ const getHoursDifference = date => (Math.floor(getMsDifference(date) / 1000 / 60
 
 const getDaysDifference = date => (Math.floor(getHrDiff(date) / 24) >= 2 ? `${Math.floor(getHrDiff(date) / 24)} days` : 'a day');
 
-export const getDifference = date => (getHrDiff(date) >= 24 ? getDaysDifference(date) : getHoursDifference(date));
+export const getDifference = date => (getHrDiff(date) >= 24
+  ? getDaysDifference(date) : getHoursDifference(date));

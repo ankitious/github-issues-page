@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 import React from 'react';
+import PropTypes from 'prop-types';
 import CodeSVG from '../commons/svg/CodeSVG';
 import IssueOpenedSVG from '../commons/svg/IssueOpenedSVG';
 import PrSVG from '../commons/svg/PrSVG';
@@ -39,7 +40,9 @@ const NavigationItemAnchor = styled.a`
     color : #586069;
 `;
 
-const NavigationItem = ({name, selected, value, url}) => (
+const NavigationItem = ({
+  name, selected, value, url,
+}) => (
   <NavigationItemWrapper selected={selected}>
     {name === 'Code' && <CodeSVG /> }
     {name === 'Issues' && <IssueOpenedSVG selected />}
@@ -55,3 +58,15 @@ const NavigationItem = ({name, selected, value, url}) => (
 );
 
 export default NavigationItem;
+
+
+NavigationItem.propTypes = {
+  name: PropTypes.string.isRequired,
+  selected: PropTypes.bool.isRequired,
+  value: PropTypes.number,
+  url: PropTypes.string.isRequired,
+};
+
+NavigationItem.defaultProps = {
+  value: '',
+};

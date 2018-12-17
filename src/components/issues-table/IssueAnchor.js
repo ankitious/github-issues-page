@@ -1,5 +1,5 @@
-import styled from "styled-components";
-import Anchor from "../commons/Anchor";
+import styled from 'styled-components';
+import Anchor from '../commons/Anchor';
 
 const IssueAnchor = styled(Anchor)`
 

@@ -1,9 +1,11 @@
 import React from 'react';
 import styled from 'styled-components';
+import PropTypes from 'prop-types';
 import WatchSVG from './svg/WatchSVG';
 import StarSVG from './svg/StarSVG';
 import ForkSVG from './svg/ForkSVG';
 import Caret from './Caret';
+import Detail from './Detail';
 
 const RepoDetailContainer = styled.div`
   display: inline-block;
@@ -37,19 +39,24 @@ const RepoDetailValueContainer = styled.span`
    background-color : #ffffff;
 `;
 
-const RepoDetail = props => (
+const RepoDetail = ({ tag, value }) => (
   <RepoDetailContainer>
     <RepoDetailTagContainer>
-      { props.tag === 'Watch' && <WatchSVG /> }
-      { props.tag === 'Star' && <StarSVG /> }
-      { props.tag === 'Fork' && <ForkSVG /> }
+      { tag === 'Watch' && <WatchSVG /> }
+      { tag === 'Star' && <StarSVG /> }
+      { tag === 'Fork' && <ForkSVG /> }
 
-      {props.tag}
+      {tag}
       <Caret />
     </RepoDetailTagContainer>
-    <RepoDetailValueContainer>{props.value}</RepoDetailValueContainer>
+    <RepoDetailValueContainer>{value}</RepoDetailValueContainer>
   </RepoDetailContainer>
 );
 
 
 export default RepoDetail;
+
+Detail.propTypes = {
+  tag: PropTypes.string.isRequired,
+  value: PropTypes.string.isRequired,
+};

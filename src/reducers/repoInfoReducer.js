@@ -1,7 +1,8 @@
-import { FETCH_REPOINFO_FAILURE,
+import {
+  FETCH_REPOINFO_FAILURE,
   FETCH_REPOINFO_REQUEST,
-  FETCH_REPOINFO_SUCCESS
-} from "../actions/constants";
+  FETCH_REPOINFO_SUCCESS,
+} from '../actions/constants';
 
 const initialState = {
   fetching: false,
