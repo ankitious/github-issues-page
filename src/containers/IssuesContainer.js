@@ -4,11 +4,12 @@ import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import { fetchGitIssues } from '../actions';
 import Issue from '../components/issues-table/Issue';
+import LoaderComponent from '../components/commons/LoaderComponent';
+import SomethingWentWrong from "../components/commons/SomethingWentWrong";
 
 const IssuesContainerWrapper = styled.div`
    border :  1px solid #e1e4e8;
    border-collapse : collapse;
-
 `;
 class IssuesContainer extends Component {
   componentDidMount() {
@@ -21,24 +22,32 @@ class IssuesContainer extends Component {
       fetching, issues, error,
     } = this.props;
 
-    console.log(issues);
+    // const IssuesContainerWrapper = (
+    //   <IssuesContainerWrapper>
+    //     { !!issues
+    //       && issues.map(issue => <Issue key={issue.id} issue={issue} />)
+    //       }
+    //   </IssuesContainerWrapper>
+    // );
+
     return (
 
-      <IssuesContainerWrapper>
-        { !!issues
-        && issues.map(issue => <Issue key={issue.id} issue={issue} />)
+      <div>
+        {fetching ? (
+          <LoaderComponent />
+        ) : (error ? <SomethingWentWrong/>
+          : (
+            <IssuesContainerWrapper>
+              { !!issues
+                    && issues.map(issue => <Issue key={issue.id} issue={issue} />)
+              }
+            </IssuesContainerWrapper>
+          )
+        )}
 
-        }
+      </div>
 
-        {/* {fetching ? ( */}
-        {/* <button disabled>Fetching...</button> */}
-        {/* ) : ( */}
-        {/* <button onClick={requestIssues}>Request a Issues</button> */}
-        {/* )} */}
 
-        {/* {error && <p style={{ color: 'red' }}>Uh oh - something went wrong!</p>} */}
-
-      </IssuesContainerWrapper>
     );
   }
 }

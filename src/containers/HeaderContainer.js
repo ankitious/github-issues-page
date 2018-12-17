@@ -3,6 +3,8 @@ import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import { fetchRepoInfo } from '../actions';
 import Header from '../components/header/Header';
+import LoaderComponent from '../components/commons/LoaderComponent';
+import SomethingWentWrong from '../components/commons/SomethingWentWrong';
 
 
 class HeaderContainer extends Component {
@@ -17,9 +19,12 @@ class HeaderContainer extends Component {
     } = this.props;
     return (
       <div>
-        { !!repoInfo && Object.keys(repoInfo).length > 0
-             && <Header {...repoInfo} />
-        }
+        {fetching
+          ? <LoaderComponent />
+          : error ? <SomethingWentWrong />
+            : !!repoInfo && Object.keys(repoInfo).length > 0
+              && <Header {...repoInfo} />
+          }
       </div>
     );
   }
