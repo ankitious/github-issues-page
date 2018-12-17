@@ -68,7 +68,6 @@ opened
       </span>
 
     </IssueOpenedBy>
-
   </IssueWrapper>);
 
 export default Issue;

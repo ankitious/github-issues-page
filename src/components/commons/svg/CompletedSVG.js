@@ -16,6 +16,6 @@ export default CompletedSVG;
 
 
 CompletedSVG.propTypes = {
-  color: PropTypes.string.isRequired,
+  color: PropTypes.string,
   hoverColor: PropTypes.string.isRequired,
 };

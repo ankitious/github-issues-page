@@ -1,0 +1,18 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders correctly 1`] = `
+<span
+  className="sc-bwzfXH fBfiXH"
+>
+  <span
+    className="sc-bdVaJa esexkF"
+  >
+    Test Label 1
+  </span>
+  <span
+    className="sc-bdVaJa fhALxq"
+  >
+    Test Label 2
+  </span>
+</span>
+`;

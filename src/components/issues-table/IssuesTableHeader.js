@@ -1,9 +1,11 @@
 import styled from 'styled-components';
 import React from 'react';
+import PropTypes from 'prop-types';
 import IssueOpenedSVG from '../commons/svg/IssueOpenedSVG';
 import { OWNER, REPO, WEB_URL } from '../../api/constants';
 import CompletedSVG from '../commons/svg/CompletedSVG';
 import Caret from '../commons/Caret';
+
 
 const IssuesTableHeaderContainer = styled.div`
     background-color: #f6f8fa;
@@ -66,6 +68,7 @@ const OtherDetail = ({ value }) => (
   </DetailSpan>
 );
 
+
 const OtherDetails = styled.div`
    display : flex;
    flex-direction : row;
@@ -102,3 +105,8 @@ const IssuesTableHeader = () => (
 );
 
 export default IssuesTableHeader;
+
+
+OtherDetail.propTypes = {
+  value: PropTypes.string.isRequired,
+};

@@ -1,0 +1,20 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders correctly 1`] = `
+<div
+  className="sc-bdVaJa ketRLB"
+>
+  <a
+    className="sc-bwzfXH kajPdv"
+    href="http://gitlab.com"
+  >
+    Hey
+  </a>
+  <a
+    className="sc-htpNat iIYexs"
+    href="http://github.com"
+  >
+    test!
+  </a>
+</div>
+`;

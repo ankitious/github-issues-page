@@ -18,5 +18,9 @@ export default IssueOpenedSVG;
 
 
 IssueOpenedSVG.propTypes = {
-  color: PropTypes.string.isRequired,
+  color: PropTypes.string,
+};
+
+IssueOpenedSVG.defaultProps = {
+  color: '#fff',
 };

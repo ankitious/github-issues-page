@@ -1,0 +1,14 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders correctly 1`] = `
+<div
+  className="sc-bdVaJa sc-htpNat fgnrUs"
+>
+   
+  <h1
+    className="sc-bxivhb hFhvax"
+  >
+    Oops, Something went wrong!!!
+  </h1>
+</div>
+`;

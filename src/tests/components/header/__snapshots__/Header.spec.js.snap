@@ -1,0 +1,282 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders correctly 1`] = `
+<nav
+  className="sc-gqjmRU eeyFAv"
+>
+  <div
+    className="sc-VigVT kQJEEu"
+  >
+    <div
+      className="sc-jzJRlG hgaumY"
+    >
+      <svg
+        aria-hidden="true"
+        className="sc-htoDjs ipwvgm"
+        height="16"
+        width="12"
+      >
+        <path
+          d="M4 9H3V8h1v1zm0-3H3v1h1V6zm0-2H3v1h1V4zm0-2H3v1h1V2zm8-1v12c0 .55-.45 1-1 1H6v2l-1.5-1.5L3 16v-2H1c-.55 0-1-.45-1-1V1c0-.55.45-1 1-1h10c.55 0 1 .45 1 1zm-1 10H1v2h2v-1h3v1h5v-2zm0-10H2v9h9V1z"
+        />
+      </svg>
+      <a
+        className="sc-bdVaJa gxQtVE"
+        color="#0366d6"
+        href="https://github.com/facebook"
+      >
+        Facebook
+      </a>
+      <span
+        className="sc-jTzLTM eIrEeW"
+      >
+        /
+      </span>
+      <a
+        className="sc-bdVaJa kyinCP"
+        color="#0366d6"
+        fontWeight="bold"
+        href="https://github.com/facebook/react"
+      >
+        React
+      </a>
+    </div>
+    <div
+      className="sc-fjdhpX lkbqaS"
+    >
+      <div
+        className="sc-EHOje eBhlrx"
+      >
+        <span
+          className="sc-bZQynM drFJgT"
+        >
+          <svg
+            aria-hidden="true"
+            height="16"
+            style={
+              Object {
+                "marginRight": "7px",
+                "position": "relative",
+                "top": "3px",
+              }
+            }
+            width="16"
+          >
+            <path
+              d="M8.06 2C3 2 0 8 0 8s3 6 8.06 6C13 14 16 8 16 8s-3-6-7.94-6zM8 12c-2.2 0-4-1.78-4-4 0-2.2 1.8-4 4-4 2.22 0 4 1.8 4 4 0 2.22-1.78 4-4 4zm2-4c0 1.11-.89 2-2 2-1.11 0-2-.89-2-2 0-1.11.89-2 2-2 1.11 0 2 .89 2 2z"
+            />
+          </svg>
+          Watch
+          <span
+            className="sc-bwzfXH bdTERA"
+          />
+        </span>
+        <span
+          className="sc-gzVnrw fyMODO"
+        >
+          34567
+        </span>
+      </div>
+      <div
+        className="sc-EHOje eBhlrx"
+      >
+        <span
+          className="sc-bZQynM drFJgT"
+        >
+          <svg
+            aria-hidden="true"
+            height="16"
+            style={
+              Object {
+                "marginRight": "7px",
+                "position": "relative",
+                "top": "3px",
+              }
+            }
+            width="14"
+          >
+            <path
+              d="M14 6l-4.9-.64L7 1 4.9 5.36 0 6l3.6 3.26L2.67 14 7 11.67 11.33 14l-.93-4.74L14 6z"
+            />
+          </svg>
+          Star
+          <span
+            className="sc-bwzfXH bdTERA"
+          />
+        </span>
+        <span
+          className="sc-gzVnrw fyMODO"
+        >
+          100000
+        </span>
+      </div>
+      <div
+        className="sc-EHOje eBhlrx"
+      >
+        <span
+          className="sc-bZQynM drFJgT"
+        >
+          <svg
+            aria-hidden="true"
+            height="16"
+            style={
+              Object {
+                "marginRight": "7px",
+                "position": "relative",
+                "top": "3px",
+              }
+            }
+            width="10"
+          >
+            <path
+              d="M8 1a1.993 1.993 0 0 0-1 3.72V6L5 8 3 6V4.72A1.993 1.993 0 0 0 2 1a1.993 1.993 0 0 0-1 3.72V6.5l3 3v1.78A1.993 1.993 0 0 0 5 15a1.993 1.993 0 0 0 1-3.72V9.5l3-3V4.72A1.993 1.993 0 0 0 8 1zM2 4.2C1.34 4.2.8 3.65.8 3c0-.65.55-1.2 1.2-1.2.65 0 1.2.55 1.2 1.2 0 .65-.55 1.2-1.2 1.2zm3 10c-.66 0-1.2-.55-1.2-1.2 0-.65.55-1.2 1.2-1.2.65 0 1.2.55 1.2 1.2 0 .65-.55 1.2-1.2 1.2zm3-10c-.66 0-1.2-.55-1.2-1.2 0-.65.55-1.2 1.2-1.2.65 0 1.2.55 1.2 1.2 0 .65-.55 1.2-1.2 1.2z"
+            />
+          </svg>
+          Fork
+          <span
+            className="sc-bwzfXH bdTERA"
+          />
+        </span>
+        <span
+          className="sc-gzVnrw fyMODO"
+        >
+          5643
+        </span>
+      </div>
+    </div>
+  </div>
+  <div
+    className="sc-VigVT gprGQr"
+  >
+    <div
+      className="sc-dnqmqq kDEYXg"
+      selected={false}
+    >
+      <svg
+        aria-hidden="true"
+        className="sc-htoDjs ipwvgm"
+        height="16"
+        width="14"
+      >
+        <path
+          d="M9.5 3L8 4.5 11.5 8 8 11.5 9.5 13 14 8 9.5 3zm-5 0L0 8l4.5 5L6 11.5 2.5 8 6 4.5 4.5 3z"
+          fillRule="evenodd"
+        />
+      </svg>
+      <a
+        className="sc-gZMcBi iBVhOz"
+        href="https://github.com/facebook/react"
+      >
+        Code
+      </a>
+      <span>
+        
+      </span>
+    </div>
+    <div
+      className="sc-dnqmqq hFwZxn"
+      selected={true}
+    >
+      <svg
+        aria-hidden="true"
+        className="sc-htoDjs dUhIVk"
+        color="#fff"
+        height="16"
+        selected={true}
+        width="14"
+      >
+        <path
+          d="M7 2.3c3.14 0 5.7 2.56 5.7 5.7s-2.56 5.7-5.7 5.7A5.71 5.71 0 0 1 1.3 8c0-3.14 2.56-5.7 5.7-5.7zM7 1C3.14 1 0 4.14 0 8s3.14 7 7 7 7-3.14 7-7-3.14-7-7-7zm1 3H6v5h2V4zm0 6H6v2h2v-2z"
+        />
+      </svg>
+      <a
+        className="sc-gZMcBi iBVhOz"
+      >
+        Issues
+      </a>
+      <span
+        className="sc-iwsKbI gZKfPY"
+      >
+        253
+      </span>
+    </div>
+    <div
+      className="sc-dnqmqq kDEYXg"
+      selected={false}
+    >
+      <svg
+        aria-hidden="true"
+        className="sc-htoDjs ipwvgm"
+        height="16"
+        width="12"
+      >
+        <path
+          d="M11 11.28V5c-.03-.78-.34-1.47-.94-2.06C9.46 2.35 8.78 2.03 8 2H7V0L4 3l3 3V4h1c.27.02.48.11.69.31.21.2.3.42.31.69v6.28A1.993 1.993 0 0 0 10 15a1.993 1.993 0 0 0 1-3.72zm-1 2.92c-.66 0-1.2-.55-1.2-1.2 0-.65.55-1.2 1.2-1.2.65 0 1.2.55 1.2 1.2 0 .65-.55 1.2-1.2 1.2zM4 3c0-1.11-.89-2-2-2a1.993 1.993 0 0 0-1 3.72v6.56A1.993 1.993 0 0 0 2 15a1.993 1.993 0 0 0 1-3.72V4.72c.59-.34 1-.98 1-1.72zm-.8 10c0 .66-.55 1.2-1.2 1.2-.65 0-1.2-.55-1.2-1.2 0-.65.55-1.2 1.2-1.2.65 0 1.2.55 1.2 1.2zM2 4.2C1.34 4.2.8 3.65.8 3c0-.65.55-1.2 1.2-1.2.65 0 1.2.55 1.2 1.2 0 .65-.55 1.2-1.2 1.2z"
+        />
+      </svg>
+      <a
+        className="sc-gZMcBi iBVhOz"
+        href="https://github.com/facebook/react/pulls"
+      >
+        Pull Requests
+      </a>
+      <span
+        className="sc-iwsKbI gZKfPY"
+      >
+        72
+      </span>
+    </div>
+    <div
+      className="sc-dnqmqq kDEYXg"
+      selected={false}
+    >
+      <svg
+        aria-hidden="true"
+        className="sc-htoDjs ipwvgm"
+        height="16"
+        width="15"
+      >
+        <path
+          d="M10 12h3V2h-3v10zm-4-2h3V2H6v8zm-4 4h3V2H2v12zm-1 1h13V1H1v14zM14 0H1a1 1 0 0 0-1 1v14a1 1 0 0 0 1 1h13a1 1 0 0 0 1-1V1a1 1 0 0 0-1-1z"
+          fillRule="evenodd"
+        />
+      </svg>
+      <a
+        className="sc-gZMcBi iBVhOz"
+        href="https://github.com/facebook/react/projects"
+      >
+        Projects
+      </a>
+      <span
+        className="sc-iwsKbI gZKfPY"
+      >
+        2
+      </span>
+    </div>
+    <div
+      className="sc-dnqmqq kDEYXg"
+      selected={false}
+    >
+      <svg
+        aria-hidden="true"
+        className="sc-htoDjs ipwvgm"
+        height="16"
+        width="16"
+      >
+        <path
+          d="M16 14v1H0V0h1v14h15zM5 13H3V8h2v5zm4 0H7V3h2v10zm4 0h-2V6h2v7z"
+        />
+      </svg>
+      <a
+        className="sc-gZMcBi iBVhOz"
+        href="https://github.com/facebook/react/insights"
+      >
+        Insights
+      </a>
+      <span>
+        
+      </span>
+    </div>
+  </div>
+</nav>
+`;

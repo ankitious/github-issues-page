@@ -2,16 +2,16 @@ import test from 'tape';
 import { call, fork, put } from 'redux-saga/effects';
 import {
   fetchGithubIssues, fetchGithubRepoInfo, watcherSaga, workerSaga,
-} from '../../src/sagas';
-import * as actions from '../../src/actions';
-import { FETCH_ISSUES_REQUEST, FETCH_REPOINFO_REQUEST } from '../../src/actions/constants';
-import { fetchIssues } from '../../src/api/fetchIssues';
-import { fetchGitIssuesSuccess } from '../../src/actions';
-import { fetchGitIssuesFailure } from '../../src/actions';
-import { fetchRepoInfo } from '../../src/api/fetchRepoInfo';
-import { fetchRepoInfoSuccess } from '../../src/actions';
-import { fetchRepoInfoFailure } from '../../src/actions';
-import rootSaga from '../../src/sagas';
+} from '../../sagas/index';
+import * as actions from '../../actions/index';
+import { FETCH_ISSUES_REQUEST, FETCH_REPOINFO_REQUEST } from '../../actions/constants';
+import { fetchIssues } from '../../api/fetchIssues';
+import { fetchGitIssuesSuccess } from '../../actions/index';
+import { fetchGitIssuesFailure } from '../../actions/index';
+import { fetchRepoInfo } from '../../api/fetchRepoInfo';
+import { fetchRepoInfoSuccess } from '../../actions/index';
+import { fetchRepoInfoFailure } from '../../actions/index';
+import rootSaga from '../../sagas/index';
 
 
 test('issues call workerSaga success ', (t) => {

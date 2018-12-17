@@ -20,18 +20,13 @@ const IssueListingContainer = styled.div`
   margin : 0 auto;
 `;
 
-class App extends Component {
-  render() {
-    return (
-      <Container>
-        <HeaderContainer />
-        <IssueListingContainer>
-          <SubNav />
-          <IssuesTable />
-        </IssueListingContainer>
-      </Container>
-    );
-  }
-}
-
+const App = () => (
+  <Container>
+    <HeaderContainer />
+    <IssueListingContainer>
+      <SubNav />
+      <IssuesTable />
+    </IssueListingContainer>
+  </Container>
+);
 export default App;

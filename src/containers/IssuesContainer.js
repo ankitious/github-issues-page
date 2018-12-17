@@ -23,14 +23,6 @@ class IssuesContainer extends Component {
       fetching, issues, error,
     } = this.props;
 
-    // const IssuesContainerWrapper = (
-    //   <IssuesContainerWrapper>
-    //     { !!issues
-    //       && issues.map(issue => <Issue key={issue.id} issue={issue} />)
-    //       }
-    //   </IssuesContainerWrapper>
-    // );
-
     return (
 
       <div>

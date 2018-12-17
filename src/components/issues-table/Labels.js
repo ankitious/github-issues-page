@@ -43,14 +43,12 @@ export default Labels;
 Labels.propTypes = {
 
   labels: PropTypes.arrayOf(
-    PropTypes.objectOf(
-      PropTypes.shape({
-        id: PropTypes.number.isRequired,
-        color: PropTypes.string.isRequired,
-        name: PropTypes.string.isRequired,
-      }),
+    PropTypes.shape({
+      id: PropTypes.number.isRequired,
+      color: PropTypes.string.isRequired,
+      name: PropTypes.string.isRequired,
+    }),
 
-    ),
   ).isRequired,
 
 
