@@ -18,7 +18,7 @@ const IssueOpenedIconWrapper = styled.div`
 `;
 
 
-const UserAnchor = styled.a`
+export const UserAnchor = styled.a`
    text-decoration : none;
    color : #586069;
    
@@ -42,7 +42,7 @@ const Issue = ({
         <IssueOpenedSVG color="#28a745" />
       </IssueOpenedIconWrapper>
       <IssueAnchorWithLabel>
-        <IssueAnchor color="#24292e" href={`${WEB_URL}/${OWNER}/${REPO}/issues/${number}`}>
+        <IssueAnchor to={`${number}`} color="#24292e" href={`${WEB_URL}/${OWNER}/${REPO}/issues/${number}`}>
           {' '}
           {title}
         </IssueAnchor>
@@ -74,19 +74,17 @@ export default Issue;
 
 
 Issue.propTypes = {
-  issue: PropTypes.objectOf(
-    {
-      title: PropTypes.string.isRequired,
-      number: PropTypes.number.isRequired,
-      user: PropTypes.objectOf(
-        PropTypes.shape({
-          login: PropTypes.string.isRequired,
-        }),
-      ).isRequired,
-      created_at: PropTypes.string.isRequired,
-      labels: PropTypes.string.isRequired,
-    },
-
-  ).isRequired,
-
+  issue:
+    PropTypes.shape(
+      {
+        title: PropTypes.string.isRequired,
+        number: PropTypes.number.isRequired,
+        user:
+          PropTypes.shape({
+            login: PropTypes.string.isRequired,
+          }).isRequired,
+        created_at: PropTypes.string.isRequired,
+        labels: PropTypes.array.isRequired,
+      },
+    ).isRequired,
 };

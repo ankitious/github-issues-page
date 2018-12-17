@@ -69,8 +69,12 @@ export default connect(mapStateToProps, mapDispatchToProps)(IssuesContainer);
 IssuesContainer.propTypes = {
   requestIssues: PropTypes.func.isRequired,
   fetching: PropTypes.bool.isRequired,
-  error: PropTypes.string.isRequired,
+  error: PropTypes.string,
   issues: PropTypes.arrayOf(
     PropTypes.object.isRequired,
   ).isRequired,
+};
+
+IssuesContainer.defaultProps = {
+  error: null,
 };

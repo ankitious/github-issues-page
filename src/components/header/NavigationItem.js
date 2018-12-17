@@ -64,9 +64,10 @@ NavigationItem.propTypes = {
   name: PropTypes.string.isRequired,
   selected: PropTypes.bool.isRequired,
   value: PropTypes.number,
-  url: PropTypes.string.isRequired,
+  url: PropTypes.string,
 };
 
 NavigationItem.defaultProps = {
-  value: '',
+  value: undefined,
+    url : undefined,
 };

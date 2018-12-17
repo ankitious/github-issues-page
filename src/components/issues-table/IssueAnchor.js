@@ -1,7 +1,7 @@
 import styled from 'styled-components';
-import Anchor from '../commons/Anchor';
+import { Link } from 'react-router-dom';
 
-const IssueAnchor = styled(Anchor)`
+const IssueAnchor = styled(Link)`
 
    font-weight: 550;
    color:#24292e;

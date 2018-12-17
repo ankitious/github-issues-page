@@ -56,6 +56,9 @@ export default connect(mapStateToProps, mapDispatchToProps)(HeaderContainer);
 HeaderContainer.propTypes = {
   requestRepoInfo: PropTypes.func.isRequired,
   fetching: PropTypes.bool.isRequired,
-  error: PropTypes.string.isRequired,
-  repoInfo: PropTypes.object.isRequired,
+  error: PropTypes.string,
+};
+
+HeaderContainer.defaultProps = {
+  error: null,
 };

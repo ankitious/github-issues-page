@@ -14,7 +14,9 @@ const navigationValues = [
   {
     name: 'Code', selected: false, url: `${WEB_URL}/${OWNER}/${REPO}`,
   },
-  { name: 'Issues', value: 253, selected: true },
+  {
+    name: 'Issues', value: 253, selected: true, url: `${window.location.origin}`,
+  },
   {
     name: 'Pull Requests', value: 72, selected: false, url: `${WEB_URL}/${OWNER}/${REPO}/pulls`,
   },
@@ -97,12 +99,10 @@ export default Header;
 Header.propTypes = {
   name: PropTypes.string.isRequired,
   html_url: PropTypes.string.isRequired,
-  owner: PropTypes.objectOf(
-    PropTypes.shape({
-      login: PropTypes.string.isRequired,
-      url: PropTypes.string.isRequired,
-    }),
-  ).isRequired,
+  owner: PropTypes.shape({
+    login: PropTypes.string.isRequired,
+    url: PropTypes.string.isRequired,
+  }).isRequired,
   stargazers_count: PropTypes.number.isRequired,
   subscribers_count: PropTypes.number.isRequired,
   forks_count: PropTypes.number.isRequired,

@@ -1,11 +1,12 @@
+import { getQueryStringValue } from '../components/commons/getQueryStringValue';
 
 export const WEB_URL = 'https://github.com';
 
 export const BASE_URL = 'https://api.github.com';
 
-export const OWNER = 'facebook';
+export const OWNER = getQueryStringValue('owner') || 'facebook';
 
-export const REPO = 'react';
+export const REPO = getQueryStringValue('repo') || 'react';
 
 export const GIT_REPO_INFO = `${BASE_URL}/repos/${OWNER}/${REPO}`;
 
