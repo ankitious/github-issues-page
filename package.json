@@ -21,7 +21,7 @@
     "precommit": "lint-staged",
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "test": "react-scripts test",
+    "test": "react-scripts test && npx babel-node ./test/*/*.js",
     "eject": "react-scripts eject"
   },
   "eslintConfig": {
@@ -34,6 +34,8 @@
     "not op_mini all"
   ],
   "devDependencies": {
+    "@babel/cli": "^7.2.0",
+    "@babel/node": "^7.2.2",
     "babel": "^5.8.23",
     "babel-core": "^5.0.0"
   }
