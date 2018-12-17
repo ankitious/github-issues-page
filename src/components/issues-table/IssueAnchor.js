@@ -9,6 +9,7 @@ const IssueAnchor = styled(Link)`
    font-size : 16px;
    padding-left: 4px;
    word-break: break-word;
+   text-decoration: none;
    
    &:hover {
      color : #0366d6;

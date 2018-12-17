@@ -118,3 +118,9 @@ test('root Saga', (t) => {
   t.ok(generator.next().done, 'must finish');
   t.end();
 });
+
+describe('Sample Test', () => {
+    it('check', () => {
+    expect(2+3).toEqual(5);
+    });
+});

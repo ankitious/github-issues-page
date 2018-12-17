@@ -7,8 +7,6 @@ exports[`renders correctly 1`] = `
   <a
     className="sc-bxivhb dHCaOF"
   />
-  <span>
-    
-  </span>
+  <span />
 </div>
 `;

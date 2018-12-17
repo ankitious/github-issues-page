@@ -169,9 +169,7 @@ exports[`renders correctly 1`] = `
       >
         Code
       </a>
-      <span>
-        
-      </span>
+      <span />
     </div>
     <div
       className="sc-dnqmqq hFwZxn"
@@ -191,6 +189,7 @@ exports[`renders correctly 1`] = `
       </svg>
       <a
         className="sc-gZMcBi iBVhOz"
+        href="http://localhost"
       >
         Issues
       </a>
@@ -273,9 +272,7 @@ exports[`renders correctly 1`] = `
       >
         Insights
       </a>
-      <span>
-        
-      </span>
+      <span />
     </div>
   </div>
 </nav>
