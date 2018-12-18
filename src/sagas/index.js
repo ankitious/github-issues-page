@@ -1,3 +1,7 @@
+/**
+ * @jest-environment node
+ */
+
 import {
   takeLatest, call, put, fork,
 } from 'redux-saga/effects';
